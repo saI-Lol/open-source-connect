@@ -1,0 +1,6 @@
+
+/* Remove the default focus outline on the button */
+.icon-button:focus {
+  outline: none;
+  border: none;
+}

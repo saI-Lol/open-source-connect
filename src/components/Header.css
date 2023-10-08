@@ -1,0 +1,31 @@
+
+nav li {
+    list-style-type: none;
+}
+
+nav a {
+    text-decoration: none; /* Remove the default underline */
+    position: relative; /* Create a positioning context for the pseudo-element */
+}
+
+nav a:hover {
+    color: gray;
+}
+
+/* Add a pseudo-element to create the underline */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; /* Adjust this value to control the spacing above the text */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Adjust this value to increase the height of the underline */
+    background-color: gray; /* Change the color of the underline */
+    transform: scaleX(0); /* Initially, set the width of the underline to zero */
+    transform-origin: center; /* Set the transform origin to the center */
+    transition: transform 0.3s ease; /* Add a transition for smooth animation */
+}
+
+nav a:hover::after {
+    transform: scaleX(1); /* Expand the underline on hover */
+}
